@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/1ce69593ca.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet"> 
+    <link  rel="icon"   href="images/favicon.svg" type="image/svg" />
+    <title>Gifos</title>
+</head>
+<body onload="loadConfigs()">
+    <div id="general-container" class="dayModeColor">
+        <!-- Contenedor viualizador de gif ampliados -->
+        <div id="image-container" class="image-container">
+            <a class="close-container" id="close-container">
+                <span class="fa fa-close"></span>
+            </a>  
+            <div id="image-detail" class="image-detail">
+                <div id="view-image" class="view-image">
+                    <img id="gif-repository" src="images/Spinner-1s-351px.svg" alt="">
+                </div>
+                <div id="image-options" class="image-options">
+                    <div id="titulo-gifo" class="titulo-gifo">
+                        <p id="user"></p>
+                        <h4 id="gif-title">Titulo Gifo</h4>
+                    </div>                
+                    <div id="buttons-container" class="buttons-container">
+                        <img id="fav" src="images/icon-fav.svg" alt="icon-fav">                        
+                        <img id="down" src="images/icon-download.svg" alt="icon-download">                        
+                    </div>
+                </div>          
+            </div>
+        </div>
+         <!-- Fin Contenedor viualizador de gif ampliados -->
+        <header>
+            <nav>
+                <!-- Iconos de Logo y menu hamburgueza -->
+                <div class="top">
+                    <div class="logo-container" id="logo-container">
+                        <!-- <img src="images/logo-desktop-modo-noc.svg" alt=""> -->
+                        <img id="logo" src="images/logo-desktop.png" alt="">
+                        <!-- <h2>GIFOS</h2> -->
+                    </div>
+                    <div class="menu-ico">
+                        <a class="hamburger" id="hamburger">
+                            <i class="fas fa-bars"></i>
+                        </a> 
+                        <a class="menu-close disabled" id="close">
+                            <span class="fa fa-close"></span>
+                        </a>                 
+                    </div>
+                </div>
+                <!-- Fin Iconos de Logo y menu hamburgueza -->
+
+                <!-- Opciones menu hamburgueza -->
+                <div class="menu-options disabled" id="menu-options">
+                    <ul class="options-list" id="options-list">
+                        <li class="option change-mode1">
+                            <a class="anchor-text" href="#" id="change-mode1">Modo Nocturno</a>                       
+                            <hr>
+                        </li>
+                        <li class="option change-mode2">
+                            <a class="anchor-text" href="#" id="change-mode2">Modo Diurno</a>                       
+                            <hr>             
+                        </li>
+                        <li class="option">
+                            <a class="anchor-text" href="#" id="favoritos">Favoritos</a>
+                            <hr>
+                        </li>
+                        <!-- <hr> -->
+                        <li class="option">
+                            <a class="anchor-text" href="#" id="mis-gifos">Mis GIFOS</a>
+                            <hr>
+                        </li>
+                        <li class="option option4">
+                            <a href="#" id="new-gifo">                               
+                                <img id="create-button" src="images/button-crear-gifo.svg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Fin Opciones menu hamburgueza -->
+
+            <!-- Titulo principal y buscador -->
+            <div class="principal" id="principal">
+                <h1 class="title">Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
+                <img src="images/ilustra_header.svg" alt="">
+                <div class="search-container">
+                    <div class="search-box">
+                        <button type="submit" class="hidden-search-button" id="search-button">
+                            <i class="fas fa-search md-24"></i>
+                        </button>
+                        <input 
+                            type="text"
+                            id="search"
+                            name="search" 
+                            class="search"
+                            autocomplete="off"
+                            placeholder="Busca GIFOS y más">
+                        <button type="submit" class="search-button" id="search-button2">
+                            <i class="fas fa-search md-24"></i>
+                        </button>
+                        <a class="menu-close close-search" id="close-search">
+                            <span class="fa fa-close"></span>
+                        </a> 
+                    </div>
+                    <!-- contenedor que me mostrara cada una de las opciones de sugerencia de busqueda -->
+                    <div id="autocomplete" class="autocomplete">
+                        <hr id="search-hr">
+                        <div class="hidden-search-option" id="search-option1">
+                            <button type="submit" class="hidden-button" id="hidden-button1">
+                                <i class="fas fa-search md-24"></i>
+                            </button>
+                            <label id="opt1" class="opcion"></label>
+                        </div>
+                        <div class="hidden-search-option" id="search-option2">
+                            <button type="submit" class="hidden-button" id="hidden-button2">
+                                <i class="fas fa-search md-24"></i>
+                            </button>
+                            <label id="opt2" class="opcion"></label>
+                        </div>   
+                        <div class="hidden-search-option" id="search-option3">
+                            <button type="submit" class="hidden-button" id="hidden-button3">
+                                <i class="fas fa-search md-24"></i>
+                            </button>
+                            <label id="opt3" class="opcion"></label>
+                        </div>
+                        <div class="hidden-search-option" id="search-option4">
+                            <button type="submit" class="hidden-button" id="hidden-button4">
+                                <i class="fas fa-search md-24"></i>
+                            </button>
+                            <label id="opt4" class="opcion"></label>
+                        </div>
+                    </div>
+                </div>
+                <h2>Trending:</h2>
+                <h3>Reactions, Entertainment, Sports, Stickers, Artists</h3>
+            </div>
+            <!-- Fin Titulo principal y buscador -->
+        </header>
+        
+        <!-- SECCIONES DEL MAIN -->
+        <main>
+            <!-- Seccion Favoritos -->
+            <section id="favorites-section" class="favorites-section disabled">
+                <div class="favorites-header">
+                    <img src="images/icon-favoritos.svg" alt="">
+                    <h2>Favoritos</h2>
+                </div>
+                <div class="favorites-body">
+                    <div id="favorites-no-content" class="favorites-no-content disabled">        
+                        <img src="images/icon-fav-sin-contenido.svg" alt="">
+                        <h3>"¡Guarda tu primer GIFO en Favoritos 
+                            para que se muestre aquí!"</h3>
+                    </div>
+                    <div id="favorites-with-content" class="favorites-with-content disabled">
+                        <div id="favorites-grid" class="favorites-grid"></div>
+                    </div>
+                    <div class="vermas-button">
+                        <button class="vermas" id="vermas-favs">
+                            VER MÁS
+                        </button>
+                    </div>
+                </div>                
+            </section>
+            <!-- FIN Seccion Favoritos -->
+            <!-- Seccion Mis GIFOS -->
+            <section id="mis-gifos-section" class="mis-gifos-section disabled">
+                <div class="mis-gifos-header">
+                    <img src="images/icon-mis-gifos.svg" alt="">
+                    <h2>Mis GIFOS</h2>
+                </div>
+                <div class="mis-gifos-body">
+                    <div id="mis-gifos-no-content" class="mis-gifos-no-content">
+                        <img src="images/icon-mis-gifos-sin-contenido.svg" alt="">
+                        <h3>¡Anímate a crear tu primer GIFO!</h3>
+                    </div>
+                    <div id="mis-gifos-with-content" class="mis-gifos-with-content">
+                        <div id="mis-gifos-grid" class="mis-gifos-grid"></div>
+                    </div>
+                    <div class="vermas-button">
+                        <button class="vermas" id="vermas-misgifos">
+                            VER MÁS
+                        </button>
+                    </div>
+                </div>   
+            </section>
+            <!-- FIN Seccion Mis GIFOS -->
+            <!-- Seccion Creación de GIFOS  -->
+            <section id="gifos-creation-section" class="gifos-creation-section disabled">
+                <div class="gifos-creation-body">
+                    <div class="gifos-creation-steps">
+                        <div id="camera-container" class="camera-container">
+                            <img id="camera-image" src="images/camara.svg" alt="">
+                            <img src="images/element-luz-camara.svg" alt="">
+                        </div>
+                        <div id="generator-container" class="generator-container">
+                            <div id="viewer" class="viewer">
+                                <div id="top-corner" class="corner">
+                                    <div id="top-left" class="top-bottom"></div>
+                                    <div id="top-right" class="top-bottom"></div>
+                                </div>
+                                <div id="central-container">
+                                    <h3 id="indication">Aquí podrás<br>crear tus propios <span>GIFOS</span></h3>
+                                    <h4 id="description">¡Crea tu GIFO en sólo 3 pasos!<br>(sólo necesitas una cámara para grabar un video)</h4>
+                                    <div id="video-container">
+                                        <div id="final-options">
+                                            <img id="down2" src="images/icon-download.svg" alt="">
+                                            <img id="link" src="images/icon-link-normal.svg" alt="">                        
+                                        </div>
+                                        <video id="gifo-record"></video>
+                                    </div>
+                                    <div id="loading-gifo">
+                                        <img id="status" src="images/Spinner-1s-351px.svg" alt="loading">
+                                        <h6 id="message">Estamos subiendo tu GIFO</h6>
+                                    </div>                                    
+                                </div>
+                                <div id="bottom-corner" class="corner">
+                                    <div id="bottom-left" class="top-bottom"></div>
+                                    <div id="bottom-right" class="top-bottom"></div>
+                                </div>
+                            </div>
+                            <div id="step-buttons" class="step-buttons">
+                                <h5 id="step1">1</h5>
+                                <h5 id="step2">2</h5>
+                                <h5 id="step3">3</h5>
+                                <h6 id="timer">00 : 00 : 00</h6>
+                                <h6 id="repeat">REPETIR CAPTURA</h6>
+                            </div>
+                        </div>
+                        <div id="tape-container" class="tape-container">
+                            <img id="pelicula-image" src="images/pelicula.svg" alt="">
+                        </div>
+                    </div>
+                    <div id="steps-buttons-container" class="steps-buttons-container">
+                        <hr id="buttons-separator">
+                        <button id="comenzar" class="comenzar">COMENZAR</button>
+                        <button id="grabar" class="grabar">GRABAR</button>
+                        <button id="finalizar" class="finalizar">FINALIZAR</button>
+                        <button id="subir" class="subir">SUBIR GIFO</button>
+                    </div>
+                </div>   
+            </section>
+            <!-- FIN Seccion Creación de GIFOS -->
+
+            <!-- Seccion para los resultados de las busquedas -->
+            <section id="search-results-section" class="search-results-section disabled">
+                <hr>
+                <div class="search-results-header">
+                    <h2 id="search-title">Results</h2>
+                </div>
+                <div class="search-results-body">
+                    <div id="search-results-no-content" class="search-results-no-content disabled">
+                        <div id="search-again" class="search-again">
+                            <img src="images/icon-busqueda-sin-resultado.svg" alt="">
+                            <h3>Intenta con otra búsqueda.</h3>
+                        </div>
+                    </div>
+                    <div id="search-results-with-content" class="search-results-with-content disabled">
+                        <div id="images-grid" class="images-grid"></div>
+                    </div>
+                    <div class="vermas-button">
+                        <button class="vermas" id="vermas">
+                            VER MÁS
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- FIN seccion para los resultados de las busquedas -->
+            <section id="new-gifos-section" class="disabled"></section>
+            
+            <!-- Seccion Trending -->
+            <section class="trending-galery">
+                <h1>Trending GIFOS</h1>
+                <h4>Mira los últimos<br>GIFOS de nuestra comunidad.</h4>
+                <div class="carousel">
+                    <div class="left-cont">
+                        <button id="left" class="left"><span id="left-arrow" class="arrow"></span></button>
+                    </div>
+                    <div class="scroll-galery" id="scroll-galery">
+                        <div id="galery" class="galery">                    
+                        </div>
+                    </div>
+                    <div class="right-cont">
+                        <button id="right" class="right"><span id="right-arrow" class="arrow"></span></button>
+                    </div>
+                </div>
+            </section>
+            <!-- FIN Seccion Trending -->
+        </main>
+        <footer>
+            <div class="social-container">
+                <p class="share">Compartir en:</p>
+                <div class="social">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <p class="rights">© GIFOS 2020 All Rights Reserved.</p>
+        </footer>
+        <!-- <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+        <script src="js/giphy_class.js"></script>
+        <script src="js/visual_mode.js"></script>
+        <script src="js/central_functions.js"></script>
+        <script src="js/gif_recorder.js"></script>
+    </div>
+</body>
+</html>

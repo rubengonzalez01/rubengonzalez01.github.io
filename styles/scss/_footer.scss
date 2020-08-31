@@ -1,0 +1,58 @@
+footer{
+    padding-top: 47px;
+    padding-bottom: 23px;
+    .social-container{
+        .share{
+            display: block;
+            @include robotoRegular;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .social{
+            display: flex;
+            flex-wrap: row wrap;
+            justify-content: center;
+            margin-bottom: 46px;
+            a{
+                margin: 0 9.5px;
+                color: #CDD6E0;
+            }
+        }
+    }
+    
+    .rights{
+        @include robotoRegular;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+
+/*---------------------------------------------------------------*/
+/*------------------ Propiedades Responsive ---------------------*/
+@media screen and (min-width: 859px){
+    footer{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 50px 156px;
+        .social-container{
+            display: inline-flex;
+            .share{
+                font-size: 13px;
+                line-height: 20px;
+                margin-bottom: 0;
+            }
+            .social{
+                justify-content: left;
+                padding-left: 17px;
+                margin-bottom: 0;
+            }
+        }        
+        .rights{
+            font-size: 13px;
+        }
+    }
+
+}

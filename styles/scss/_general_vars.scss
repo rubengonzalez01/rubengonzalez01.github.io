@@ -1,0 +1,350 @@
+$nightMode: #37383C;
+$dayMode: #FFFFFF;
+$gifosBlueColor: #572EE5;
+$gifosWhiteColor: #FFFFFF;
+$gifosBlackColor: #000000;
+$gifosNightTrending: #222326;
+$gifosDayTrending: #F3F5F8;
+$gifosSearchColor: #9CAFC3;
+
+
+@mixin proximaNovaBold {
+    font-family: 'proxima_nova_ltsemibold', Georgia, sans-serif;
+    text-align: center;
+    letter-spacing: 0;
+}
+@mixin proximaNovaRegular {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: lighter; 
+}
+@mixin montserratBold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0;
+}
+@mixin montserratMedium {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0;
+}
+@mixin robotoRegular {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+@mixin robotoBold {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+@mixin gifCard {
+        .buttons-div{
+            display: none;
+            top: 10px;
+            right: 10px;
+            img{
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+        .detail-div{
+            display: none;
+            bottom: 16px;
+            left: 12px;
+            p{  
+                color: $gifosWhiteColor;
+                z-index: 3;                                
+            }
+            .user{
+                @include robotoRegular;
+                font-size: 15px;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .title{
+                @include robotoBold;
+                font-size: 16px;
+            }
+        } 
+}
+
+@mixin gifCardHover {
+    .buttons-div{
+        display: inline;
+        position: absolute;
+    }
+    .detail-div{
+        display: inline;
+        position: absolute;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//----------------  Clases globales 
+
+// clase para desactivar la visibilidad de tags
+.disabled{
+    display: none;
+}
+
+
+// Clase para modo Nocturno
+.nightModeColor{
+    background: $nightMode;    
+    border-top: 5px solid $gifosBlackColor;
+    border-bottom: 5px solid $gifosBlackColor;
+    h1, h3, h4, h6, p, .hamburger, .menu-close, .close-container, a{
+        color: $gifosWhiteColor;
+    }
+    h5{
+        color: $gifosWhiteColor;
+        border: 1px solid $gifosWhiteColor;
+    }  
+    .trending-galery{
+        background: $gifosNightTrending;
+        .left, .right{
+            border: 2px solid $gifosWhiteColor;
+            background-color: $gifosNightTrending;
+            div, .arrow{
+                border-top: 2px solid $gifosWhiteColor;
+                border-right: 2px solid $gifosWhiteColor;
+            }
+            &:hover{
+                background-color: $gifosWhiteColor;
+                border-color: $gifosNightTrending;
+                div, .arrow{
+                    border-top-color: $gifosBlackColor;
+                    border-right-color: $gifosBlackColor;                        
+                }
+            }
+        }
+    }
+    .search-container, .vermas, .comenzar, .grabar, .finalizar, .subir, .viewer{
+        border: 1px solid $gifosWhiteColor;
+        background: $nightMode;
+        .search{
+            background: $nightMode;
+            color: $gifosWhiteColor;
+        }
+    }
+    .vermas, .comenzar, .grabar, .finalizar, .subir{
+        &:hover{
+            background: $gifosWhiteColor;
+            color: $gifosBlackColor;
+        }
+    }
+    h2, button{
+        background: $nightMode; 
+        color: $gifosWhiteColor;
+    }
+    .change-mode1{
+        display: none;
+    }
+    .options-list{
+        background: $gifosBlackColor;
+    }
+    .image-container{
+        background: rgba(55,56,60,0.97);
+    }
+    #buttons-separator{
+        background: $gifosWhiteColor;
+    }
+    .social a{
+        &:hover{
+            color: $gifosWhiteColor;
+        }
+    }
+    @media screen and (min-width: 860px){
+        a{
+            color: $gifosWhiteColor;            
+        }
+    }
+}
+
+// Clase para modo Diurno
+.dayModeColor{
+    background: $gifosWhiteColor;
+    border-top: 5px solid $gifosBlueColor;
+    border-bottom: 5px solid $gifosBlueColor;
+    h1, h3, h6, .hamburger, .menu-close, .close-container{
+        color: $gifosBlueColor;
+    }
+    h4, p{
+        color: $gifosBlackColor;
+    }
+    h5{
+        color: $gifosBlueColor;
+        border: 1px solid $gifosBlueColor;
+    }        
+    .trending-galery{
+        background: $gifosDayTrending;
+        .left, .right{
+            border: 2px solid $gifosBlueColor;
+            div, .arrow{
+                border-top: 2px solid $gifosBlueColor;
+                border-right: 2px solid $gifosBlueColor;
+            }
+            &:hover{
+                background-color: $gifosBlueColor;
+                border-color: $gifosDayTrending;
+                div, .arrow{
+                    border-top-color: $gifosDayTrending;
+                    border-right-color: $gifosDayTrending;                        
+                }
+            }
+        }
+    }
+    .search-container, .vermas, .comenzar, .grabar, .finalizar, .subir, .viewer{
+        border: 1px solid $gifosBlueColor;
+        background: $gifosWhiteColor;
+        .search{
+            background: $gifosWhiteColor;
+        }
+    }
+    .vermas, .comenzar, .grabar, .finalizar, .subir{
+        &:hover{
+            background: $gifosBlueColor;
+            color: $gifosWhiteColor;
+        }
+    }
+    h2, button{
+        background: $gifosWhiteColor;
+        color: $gifosBlueColor;
+    }
+    .change-mode2{
+        display: none;
+    }
+    .options-list{
+        background: rgba(87,46,229,0.90);
+    }
+    .image-container{
+        background: rgba(255,255,255,0.97);
+    }
+    a{
+        color: $gifosWhiteColor;
+    }
+    #buttons-separator{
+        background: $gifosBlueColor;
+    }
+    .social a{
+        &:hover{
+            color: $gifosBlueColor;
+        }
+    }
+    @media screen and (min-width: 860px){
+        a{
+            color: $gifosBlueColor;
+        }
+    }
+}
+
+// Visualizador de imagenes ampliadass
+.image-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-flow: column wrap;
+    align-items: center;
+    padding-top: 152px;
+    padding-left: 29px;
+    padding-right: 29px;
+    width: 100%;
+    z-index: 3;
+    .close-container{
+        position: absolute;
+        top: 62px;
+        right: 38px;
+        cursor: pointer;               
+    }
+    .image-detail{
+        display: flex;
+        flex-flow: column nowrap;
+        .view-image{
+            margin-bottom: 14px;
+            img{
+                width: 100%;
+                margin-bottom: 14px;
+            }
+        }
+        .image-options{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            justify-content: space-between;
+            .titulo-gifo{
+                display: flex;
+                flex-flow: column wrap;
+                p{
+                  @include proximaNovaRegular;
+                  font-size: 15px;
+                  text-align: left;
+                  margin-bottom: 6px;
+                }
+                h4{
+                    @include proximaNovaBold;
+                    text-align: left;
+                    font-size: 16px;
+                }
+            }
+            .buttons-container{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-end;
+                align-items: center;
+                #fav{
+                    border: 1px solid #BED1E5;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+                #down{
+                    margin-left: 20px;
+                    border: 1px solid #BED1E5;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+            }            
+        }
+    }
+    @media screen and (min-width: 860px){
+        padding-top: 20px;
+        .close-container{
+            top: 80px;
+            right: 30%;
+        }
+        .image-detail{
+            padding-top: 150px;
+        }
+    }   
+}// FIN Visualizador de imagenes ampliadass
+
+
+.vermas-button{
+    text-align: center;
+    .vermas{
+        @include montserratBold;
+        font-size: 13px;
+        border-radius: 25px;
+        height: 50px;
+        width: 127px;
+        cursor: pointer;
+    }
+}
+
+// .gifos-results{
+//     pointer-events: auto;
+// }

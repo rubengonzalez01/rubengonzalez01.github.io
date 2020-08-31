@@ -1,0 +1,645 @@
+main{
+    // <!-- Seccion Trending Galery -->
+    .trending-galery{
+        display: grid;
+        grid-template: 1fr / 1fr;
+        justify-items: center;        
+        padding-top: 44px;
+        padding-bottom: 82px;
+        overflow: hidden;
+        h1{        
+            @include montserratBold;
+            margin-bottom: 9px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        h4{
+            @include robotoRegular;
+            font-size: 16px;
+            line-height: 23px;
+        }
+        .carousel{
+            display: grid;
+            grid-template-columns: 1fr 8fr 1fr;
+            .scroll-galery{
+                display: grid;
+                grid-template-columns: repeat(25, 1fr);
+                overflow-x: scroll;
+                overflow-y: hidden;
+                width: 100%;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }    
+                .galery{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    .img-div{
+                        margin: 32px 11px 0 11px;                
+                        width: 243px;
+                        height: 187px;
+                        cursor: pointer;
+                        position: relative;            
+                        .trending-result{
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                        &:hover{
+                            background: #572EE5;
+                            .trending-result{
+                                opacity: 0.3;
+                            }
+                        }
+                        @include gifCard;
+                    }
+                }
+            }    
+            .left, .right{
+                position: relative;
+                top: 150px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                .arrow{
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+            .left-cont{
+                text-align: right;
+               .left{
+                    padding-left: 10px;
+                    right: 22px;
+                    #left-arrow{
+                        transform: rotate(225deg);
+                    }
+                } 
+            }
+            .right-cont{
+                text-align: left;
+                .right{                    
+                    padding-left: 7px;
+                    left: 22px;
+                    #right-arrow{
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            
+        }   
+            
+    }// <!-- FIN Seccion Trending Galery -->
+
+    // <!-- Seccion Favoritos -->
+    .favorites-section{
+        padding: 34px 22px 78px 22px;
+        .favorites-header{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            margin-bottom: 46px;
+            h2{
+                @include montserratBold;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .favorites-body{
+            .favorites-no-content{
+                // dinamicamente le doy el display
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 90px;
+                    margin-bottom: 35px;
+                }
+                h3{
+                    @include montserratBold;
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: #50E3C2;
+                }
+            }
+            .favorites-with-content{
+                .favorites-grid{
+                    display: grid;
+                    grid-template: 1fr / repeat(2, 1fr);
+                    grid-gap: 25px;
+                    //padding: 40px 21px 78px 21px;
+                    justify-items: center;
+                    .img-div{
+                        //width: 156px;
+                        width: 100%;
+                        max-width: 240px;
+                        height: 120px;
+                        cursor: pointer;
+                        position: relative;                 
+                        .favorites-result{
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }                   
+                        &:hover{
+                            background: #572EE5;
+                            .favorites-result{
+                                opacity: 0.3;
+                            }
+                        }
+                        @include gifCard;                      
+                    }
+                }
+            }
+        }
+    } //<!-- FIN Seccion Favoritos -->
+
+    // <!-- Seccion Mis GIFOS -->
+    .mis-gifos-section{
+        padding-bottom: 78px;
+        .mis-gifos-header{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            margin-bottom: 46px;
+            h2{
+                @include montserratBold;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .mis-gifos-body{
+            .mis-gifos-no-content{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 90px;
+                    margin-bottom: 35px;
+                }
+                h3{
+                    @include montserratBold;
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: #50E3C2;
+                }
+            }
+            .mis-gifos-with-content{
+                .mis-gifos-grid{
+                    display: grid;
+                    grid-template: 1fr / repeat(2, 1fr);
+                    grid-gap: 25px;
+                    padding: 40px 21px 78px 21px;
+                    justify-items: center;
+                    .img-div{
+                        //width: 156px;
+                        width: 100%;
+                        max-width: 240px;
+                        height: 120px;
+                        cursor: pointer;
+                        position: relative;                    
+                        .mis-gifos-result{
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                        &:hover{
+                            background: #572EE5;
+                            .mis-gifos-result{
+                                opacity: 0.3;   
+                            }                            
+                        }
+                        @include gifCard;                     
+                    }
+                }
+            }
+        }
+    } //<!-- FIN Seccion Mis GIFOS -->
+
+    // <!-- Seccion para los resultados de las busquedas -->
+    .search-results-section{
+        padding-bottom: 78px;
+        hr{
+            background-color: #9CAFC3;
+            width: 45%;
+            height: 1px;
+            margin: auto auto 41px auto;
+        }
+        .search-results-header{
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            h2{
+                @include montserratBold;
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+        .search-results-body{
+            .search-results-no-content{
+                .search-again{
+                    display: flex;
+                    flex-flow: column wrap;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 46px;
+                    img{
+                        width: 90px;
+                        margin-bottom: 35px;
+                    }
+                    h3{
+                        @include montserratBold;
+                        font-size: 16px;
+                        line-height: 25px;
+                        color: #50E3C2;
+                    }
+                }
+            }
+            .search-results-with-content{
+                .images-grid{
+                    display: grid;
+                    grid-template: 1fr / repeat(2, 1fr);
+                    grid-gap: 25px;
+                    padding: 40px 21px 78px 21px;
+                    justify-items: center;
+                    .img-div{
+                        //width: 156px;
+                        width: 100%;
+                        max-width: 240px;
+                        height: 120px;
+                        cursor: pointer;
+                        position: relative;                     
+                        .search-result{
+                            width: 100%;
+                            height: 100%;
+                            z-index: 1;
+                        }
+                        &:hover{
+                            background: #572EE5;
+                            .search-result{
+                                opacity: 0.3;
+                            }
+                        }
+                        @include gifCard;                    
+                    }
+                }
+            }
+        }
+    } // <!-- FIN seccion para los resultados de las busquedas -->    
+
+    // <!-- Seccion Creación de GIFOS  -->
+    .gifos-creation-section{
+        padding: 16.9px 156px 96.1px 156px;
+        .gifos-creation-body{
+            .gifos-creation-steps{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                .camera-container{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-items: center;
+                }
+                .generator-container{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    .viewer{
+                        display: flex;
+                        flex-flow: column nowrap;
+                        width: 688px;
+                        height: 390px;
+                        padding: 20px;
+                        .corner{
+                            display: flex;
+                            flex-flow: row wrap;
+                            justify-content: space-between;
+                            .top-bottom{
+                                width: 25px;
+                                height: 25px;
+                            }
+                            #top-left{
+                                border-top: 1px solid #50E3C2;
+                                border-left: 1px solid #50E3C2;
+                            }
+                            #top-right{
+                                border-top: 1px solid #50E3C2;
+                                border-right: 1px solid #50E3C2;
+                            }
+                            #bottom-left{
+                                border-bottom: 1px solid #50E3C2;
+                                border-left: 1px solid #50E3C2;
+                            }
+                            #bottom-right{
+                                border-bottom: 1px solid #50E3C2;
+                                border-right: 1px solid #50E3C2;
+                            }                                                
+                        }
+                        #central-container{
+                            display: flex;
+                            flex-flow: column nowrap;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                            h3{
+                                @include montserratBold;
+                                font-size: 25px;
+                                line-height: 35px;
+                                span{
+                                    color: #50E3C2;
+                                }
+                            }
+                            h4{
+                                @include robotoRegular;
+                                font-size: 16px;
+                                line-height: 29px;
+                            }
+                            #video-container{                                
+                                position: relative;
+                                #final-options{
+                                    position: absolute;
+                                    display: none;
+                                    z-index: 2;                                   
+                                    top: 11px;
+                                    right: 12px;
+                                    img{
+                                        margin-left: 10px;
+                                        cursor: pointer;                                  
+                                    }
+                                }  
+                                #gifo-record{
+                                    display: none;
+                                    //width: 100%;
+                                    height: 260px;
+                                }
+                            }                        
+                            #loading-gifo{
+                                position: absolute;
+                                text-align: center;
+                                display: none;
+                                img{
+                                    width: 80px;
+                                }
+                                #message{             
+                                    position: relative;
+                                    top: -15px;                   
+                                    @include montserratBold;
+                                    font-size: 15px;
+                                    color: $gifosWhiteColor;
+                                }
+                            }                                         
+                        }
+                    }
+                    .step-buttons{
+                        position: relative;
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: center;
+                        h5{                            
+                            margin: 24px 13px 19px 13px;
+                            border-radius: 50px;
+                            padding: 6px 11px;
+                        }                   
+                        h6{
+                            @include montserratBold;
+                            position: absolute;
+                            display: none;
+                            font-size: 15px;
+                            line-height: 22px;
+                            top: 40%;
+                            right: 0;
+                        }
+                        #repeat{
+                            border-bottom: 3px solid #5ED7C6;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .tape-container{
+                    padding-left: 67px;
+                    display: flex;
+                    flex-flow: column wrap;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+            .steps-buttons-container{
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                #buttons-separator{
+                    width: 70%;
+                    height: 6px;
+                    margin: auto auto 20.1px auto;
+                }
+                .comenzar, .grabar, .finalizar, .subir{
+                    @include montserratBold;
+                    font-size: 13px;
+                    border-radius: 25px;
+                    height: 50px;
+                    width: 127px;
+                    cursor: pointer;                    
+                }
+                .grabar, .finalizar, .subir{
+                    display: none;
+                }
+            }
+        }
+    } // <!-- FIN Seccion Creación de GIFOS -->
+}
+
+
+
+/*---------------------------------------------------------------*/
+/*------------------ Propiedades Responsive ---------------------*/
+@media screen and (max-width: 859px){
+    main{
+        .left{
+            display: none;
+        }
+        .right{
+            display: none;
+        }
+    }   
+}
+
+@media screen and (min-width: 860px){
+    main{
+        // <!-- Seccion Trending Galery -->
+        .trending-galery{
+            display: grid;
+            grid-template: 1fr / 1fr;
+            justify-items: center;        
+            padding-top: 44px;
+            padding-bottom: 82px;
+            overflow: hidden;
+            h1{
+                margin-bottom: 9px;
+                font-size: 25px;
+                line-height: 30px;
+            }
+            h4{
+                font-size: 16px;
+                line-height: 23px;
+                br{
+                    display: none;
+                }
+            }
+            .carousel{
+                .scroll-galery{  
+                    .galery{                   
+                        .img-div{
+                            margin: 32px 14.5px 0 14.5px;                
+                            width: 357px;
+                            height: 275px;
+                            &:hover{
+                                @include gifCardHover;
+                                cursor: default;
+                            } 
+                        }
+                    }
+                } 
+            }                       
+        }// <!-- FIN Seccion Trending Galery -->
+
+        // <!-- Seccion Favoritos -->
+        .favorites-section{
+            padding: 36px 156px 78px 156px;
+            .favorites-header{
+                margin-bottom: 36px;
+                h2{
+                    @include montserratBold;
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+            .favorites-body{
+                .favorites-no-content{
+                    padding-bottom: 59px;
+                    img{
+                        padding-top: 109.3px;
+                        width: 150px;
+                        margin-bottom: 23.7px;
+                    }
+                    h3{
+                        font-size: 22px;
+                        line-height: 33px;
+                        max-width: 431px;
+                    }
+                }
+                .favorites-with-content{
+                    .favorites-grid{
+                        grid-template: 1fr / repeat(4, 1fr);
+                        grid-gap: 29px;
+                        padding-bottom: 78px;
+                        .img-div{
+                            width: 100%;
+                            //height: 100%;
+                            max-width: 260px;
+                            height: 200px;
+                            &:hover{
+                                @include gifCardHover;
+                                cursor: default;
+                            }                   
+                        }
+                    }
+                }
+            }
+        } //<!-- FIN Seccion Favoritos -->
+
+        // <!-- Seccion Favoritos -->
+        .mis-gifos-section{
+            padding: 36px 156px 78px 156px;
+            .mis-gifos-header{
+                margin-bottom: 36px;
+                h2{
+                    @include montserratBold;
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+            }
+            .mis-gifos-body{
+                .mis-gifos-no-content{
+                    padding-bottom: 59px;
+                    img{
+                        padding-top: 109.3px;
+                        width: 150px;
+                        margin-bottom: 23.7px;
+                    }
+                    h3{
+                        font-size: 22px;
+                        line-height: 33px;
+                        max-width: 431px;
+                    }
+                }
+                .mis-gifos-with-content{
+                    .mis-gifos-grid{
+                        grid-template: 1fr / repeat(4, 1fr);
+                        grid-gap: 29px;
+                        padding-bottom: 78px;
+                        .img-div{
+                            position: relative;
+                            width: 100%;
+                            //height: 100%;
+                            max-width: 260px;
+                            height: 200px;
+                            &:hover{
+                                @include gifCardHover;
+                                cursor: default;
+                            }                                 
+                        }
+                    }
+                }
+            }
+        } //<!-- FIN Seccion Favoritos -->
+
+        // <!-- Seccion para los resultados de las busquedas -->
+        .search-results-section{
+            padding: 36px 156px 78px 156px;
+            hr{
+                width: 22%;
+            }
+            .search-results-header{
+                h2{
+                    font-size: 30px;
+                }
+            }
+            .search-results-body{
+                .search-results-no-content{
+                    .search-again{
+                        padding-top: 0;
+                        img{
+                            padding-top: 109.3px;
+                            width: 150px;
+                            margin-bottom: 29px;
+                        }
+                        h3{
+                            font-size: 22px;
+                            line-height: 33px;
+                        }
+                    }
+                }
+                .search-results-with-content{
+                    .images-grid{
+                        grid-template: 1fr / repeat(4, 1fr);
+                        grid-gap: 29px;
+                        padding: 40px 21px 78px 21px;
+                        .img-div{
+                            width: 100%;
+                            //height: 100%;
+                            max-width: 260px;
+                            height: 200px;
+                            &:hover{
+                                @include gifCardHover;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+            }
+        } // <!-- FIN seccion para los resultados de las busquedas --> 
+        
+    }
+}

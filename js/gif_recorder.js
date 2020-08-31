@@ -67,7 +67,7 @@ function recordStep1(){
     comenzar.style.display = "none";
 
     // manejador para navegadores antiguos de manera que pueda implementar getUserMedia de alguna forma
-    /*
+    
     if (navigator.mediaDevices === undefined) {
         navigator.mediaDevices = {};
         navigator.mediaDevices.getUserMedia = function(constraintObj) {
@@ -92,8 +92,8 @@ function recordStep1(){
         .catch(err=>{
             console.log(err.name, err.message);
         })
-    }*/
-    /*
+    }
+    
     navigator.mediaDevices.getUserMedia(CONSTRAINT_OBJ)
     .then( 
         recordStep2 
@@ -101,13 +101,15 @@ function recordStep1(){
     .catch(function(err) { 
         console.log(err.name, err.message); 
     });
-    */
-
+    
+    /*
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     console.log(navigator.getUserMedia)
     navigator.getUserMedia(CONSTRAINT_OBJ, recordStep2, function(err) { 
         console.log(err.name, err.message); 
-    });
+    });*/
+
+
    //navigator.mediaDevices.getUserMedia(CONSTRAINT_OBJ)
     // ({
     //     audio: false,

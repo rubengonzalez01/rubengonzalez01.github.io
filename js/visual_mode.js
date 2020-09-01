@@ -129,12 +129,20 @@ function homeMode(visibleSeccion){
     let body = document.getElementById("general-container");
     // cambio de logo
     let logo = document.getElementById("logo");
+    // para cambiar las imagenes de la seccion grabacion
+    let cameraImage = document.getElementById("camera-image");
+    let peliculaImage = document.getElementById("pelicula-image");
     logo.src = "images/logo-desktop.png";
+    cameraImage.src = "images/camara.svg";
+    peliculaImage.src = "images/pelicula.svg";    
     if(modoNoc){
         body.classList.add("dayModeColor");
         body.classList.remove("nightModeColor");        
         modoNoc = false;
     }
+    changeStepStatus(1, false);
+    changeStepStatus(2, false);
+    changeStepStatus(3, false);
     showSelectedSection(visibleSeccion);
 }
 

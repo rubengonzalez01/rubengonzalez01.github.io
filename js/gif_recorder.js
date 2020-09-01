@@ -100,31 +100,8 @@ function recordStep1(){
     )
     .catch(function(err) { 
         console.log(err.name, err.message); 
-    });
-    
-    /*
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-    console.log(navigator.getUserMedia)
-    navigator.getUserMedia(CONSTRAINT_OBJ, recordStep2, function(err) { 
-        console.log(err.name, err.message); 
-    });*/
+    });    
 
-
-   //navigator.mediaDevices.getUserMedia(CONSTRAINT_OBJ)
-    // ({
-    //     audio: false,
-    //     video: {
-    //        height: { max: 480 }
-    //     }
-    //  })
-     /*.then(//function(stream) {
-        //video.srcObject = stream;
-        //video.play()
-        recordStep2
-     )
-     .catch(function(err) { 
-        console.log(err.name, err.message); 
-    });*/
 }
 
 

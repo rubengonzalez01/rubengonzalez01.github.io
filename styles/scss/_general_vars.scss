@@ -341,10 +341,11 @@ $gifosSearchColor: #9CAFC3;
         border-radius: 25px;
         height: 50px;
         width: 127px;
-        cursor: pointer;
+        cursor: pointer;        
+        &:focus{
+            outline:none;
+            outline-width: 0;
+            box-shadow: none;
+        }  
     }
 }
-
-// .gifos-results{
-//     pointer-events: auto;
-// }

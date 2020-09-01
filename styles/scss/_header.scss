@@ -12,13 +12,6 @@ header{
                 img{
                     width: 48.8px;
                 }
-                // h2{
-                //     position: absolute;
-                //     font-family: 'Roboto';
-                //     font-size: 16px;
-                //     top: 53px;
-                //     left: 30px;                   
-                // }
             }
             .menu-ico{
                 position: relative;
@@ -69,12 +62,6 @@ header{
                 .option4{
                     display: none;
                 }
-                // hr{
-                //     background-color: #dddada;
-                //     width: 10%;
-                //     height: 1px;
-                //     margin: auto;
-                // }
             }
         }
     } // fin del Nav
@@ -86,7 +73,6 @@ header{
         align-items: center;
         padding-bottom: 48px;
         .title{
-            // @include proximaNovaBold;
             @include montserratBold;
             font-size: 25px;
             line-height: 33px;
@@ -107,18 +93,14 @@ header{
             display: flex;
             flex-flow: column nowrap;                
             justify-content: left;
-            //padding: 0 20px 0 55px;
             padding: 0 20px 0 21px;
             .search-box{
                 height: 50px;
                 border: hidden;
-                //width: 334PX;
-                //border-radius: 27px;
                 display: flex;
                 flex-flow: row nowrap;                
                 justify-content: space-between;
                 position: relative;
-                //padding: 0 20px 0 55px;
                 .search{
                     @include robotoRegular;
                     font-size: 16px;
@@ -207,7 +189,6 @@ header{
     header{
         padding: 23px 156px 0 156px;
         nav{        
-            //margin-bottom: 19.2px;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
@@ -217,11 +198,6 @@ header{
                     img{
                         width: 59.1px;
                     }
-                    // h2{
-                    //     font-size: 17px;
-                    //     top: 46px;
-                    //     left: 168px;                 
-                    // }
                 }
                 .menu-ico{
                     display: none;

@@ -319,6 +319,13 @@
   cursor: pointer;
 }
 
+.vermas-button .vermas:focus {
+  outline: none;
+  outline-width: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 header {
   padding: 34px 22px 0 22px;
 }

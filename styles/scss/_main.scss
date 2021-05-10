@@ -100,6 +100,11 @@ main{
             flex-flow: column nowrap;
             justify-content: center;
             margin-bottom: 46px;
+            align-items: center;
+            img{
+                width: 28px;
+                height: 21px
+            }
             h2{
                 @include montserratBold;
                 font-size: 20px;
@@ -163,6 +168,11 @@ main{
             flex-flow: column nowrap;
             justify-content: center;
             margin-bottom: 46px;
+            align-items: center;
+            img{
+                width: 28px;
+                height: 21px
+            }
             h2{
                 @include montserratBold;
                 font-size: 20px;
@@ -508,7 +518,7 @@ main{
         .favorites-section{
             padding: 36px 156px 78px 156px;
             .favorites-header{
-                margin-bottom: 36px;
+                margin-bottom: 36px;                
                 h2{
                     @include montserratBold;
                     font-size: 25px;

@@ -867,6 +867,14 @@ main .favorites-section .favorites-header {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 46px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .favorites-section .favorites-header img {
+  width: 28px;
+  height: 21px;
 }
 
 main .favorites-section .favorites-header h2 {
@@ -994,6 +1002,14 @@ main .mis-gifos-section .mis-gifos-header {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 46px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .mis-gifos-section .mis-gifos-header img {
+  width: 28px;
+  height: 21px;
 }
 
 main .mis-gifos-section .mis-gifos-header h2 {
